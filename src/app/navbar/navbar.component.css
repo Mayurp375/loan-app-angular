@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* Styles for the normal state of the button */
+.example-button-row button[mat-button] {
+    transition: background-color 0.3s, color 0.3s;
+    /* This will make the hover effect smooth */
+}
+
+/* Styles for the hover state of the button */
+.example-button-row button[mat-button]:hover {
+    color: white;
+    background-color: #ff0000;
+}
+
+/* Ensure that the raised button has the hover effect too */
+.example-button-row button[mat-raised-button]:hover {
+    color: white;
+    background-color: #ff0000;
+}
+
+.icon-main{
+    width: fit-content;
+    height: 54px;
+}
+.example-button-row{
+
+}
+
+.line {
+    max-height: 10px;
+    width: 100px;
+    border-top: 2px solid white;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 18px 16px;
+    width: 100%;
+    white-space: nowrap;
+    height: var(--mat-toolbar-standard-height);
+    align-items: flex-start;
+}

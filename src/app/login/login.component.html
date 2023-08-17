@@ -1,0 +1,50 @@
+<div class="main">
+    <div mat-dialog-title style="display: flex; justify-content: center;">
+        <h1>Contact Details</h1>
+    </div>
+    <form>
+        <div mat-dialog-content class="inputForm">
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            
+            <div class="row">
+
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Company</mat-label>
+                    <input matInput placeholder="Google">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+        <!-- <div mat-dialog-content class="inputForm">
+       </div> -->
+        <div mat-dialog-action style=" display: flex; gap: 99px; justify-content: center; padding: 0 25px ;">
+            <button mat-raised-button style="flex: 1px;">Cancel</button>
+            <button mat-raised-button color="primary" style="flex: 1px;">Save</button>
+        </div>
+    </form>
+</div>
