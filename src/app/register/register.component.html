@@ -1,0 +1,79 @@
+<div class="main">
+    <div class="border">
+        <div mat-dialog-title>
+            <h1>Register</h1>
+        </div>
+        <form>
+            <div mat-dialog-content class="inputForm" style="display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;">
+
+  <!-- "name": "{{$randomFullName}}",
+            //     "email": "{{$randomEmail}}",
+            //     "mobilNumber": "123-456-7890",
+            //     "city": "{{$randomCity}}",
+            //     "state": "{{$randomStreetAddress}}",
+            //     "dataOfBirth": "1990-01-01",
+            //     "password": "{{$randomPassword}}!" -->
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput type="number">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Gadchiroli" type="text">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="Maharashtra" type="text">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" type="date">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+
+                
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" type="Password">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Conform Password</mat-label>
+                    <input matInput placeholder="Password" type="Password">
+                </mat-form-field>
+
+
+
+                <div mat-dialog-action style=" display: flex; gap: 99px; justify-content: center; padding: 0 25px ;">
+                    <button mat-raised-button style="flex: 1px;">Cancel</button>
+                    <button mat-raised-button color="primary" style="flex: 1px;">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

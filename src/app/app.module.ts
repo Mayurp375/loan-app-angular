@@ -21,12 +21,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {MatDividerModule} from '@angular/material/divider';
+import { AplyforloanComponent } from './aplyforloan/aplyforloan.component';
 
+import { RegisterComponent } from './register/register.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { AboutComponent } from './about/about.component';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    AplyforloanComponent,
+    RegisterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCardModule,
     MatDialogModule,MatProgressBarModule,
     MatDatepickerModule,
-    MatNativeDateModule 
+    MatNativeDateModule ,MatMenuModule,MatTabsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

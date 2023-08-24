@@ -1,0 +1,56 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px;
+    width: 90%;
+   
+}
+
+.button-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.action-button {
+    background-color: #83ec94;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+.form-container {
+    width: auto;
+    /* Adjust based on content */
+    border: 2px solid #4CAF50;
+    padding: 10px 20px;
+    /* Smaller padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* In case the content tries to overflow */
+}
+
+/* Media Query for Tablet and Desktop */
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row;
+    }
+
+    .action-button {
+        width: auto;
+        margin: 4px 10px;
+    }
+}

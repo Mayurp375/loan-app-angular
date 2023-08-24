@@ -1,0 +1,26 @@
+<!-- <div class="page">
+  <div class="button-container">
+    <button mat-raised-button class="action-button" (click)="toggleLogin()">Allready Register/Login</button>
+    <button mat-raised-button class="action-button" (click)="toggleRegister()" style="background-color: #ed0707;">Not Registered/SignUp</button>
+  </div>
+
+  <div *ngIf="showLogin" class="form-container">
+    <app-login></app-login>
+  </div>
+
+  <div *ngIf="showRegister" class="form-container">
+    <app-register></app-register>
+  </div>
+</div> -->
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Short tab">
+    <div class="example-small-box mat-elevation-z4">
+      <app-login></app-login>
+    </div>
+  </mat-tab>
+  <mat-tab label="Long tab">
+    <div class="example-large-box mat-elevation-z4">
+      <app-register></app-register>
+    </div>
+  </mat-tab>
+</mat-tab-group>
