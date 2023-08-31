@@ -1,45 +1,40 @@
-<div class="data">
-    <!-- Navbar -->
-    <div class="navbar">
-
-        <mat-toolbar style="background-color: transparent;">
-            <div style="display: flex; align-items: center;">
-                <button mat-button style="color: white;"><a class="navbar-brand me-2" href="">
-                        <img class="icon-main"
-                            src="https://0ba699b9742e7f77542f-64ba4546b1270cc9ae1f39e6ac774693.ssl.cf1.rackcdn.com/1569233811156Icons1.png" />
-                    </a>
-                    <h3 style="font-family: 'Ubuntu', sans-serif;font-weight: 500; font-size: 34px;">EASY LOAN</h3>
+<div class="navbar">
+    <mat-toolbar style="background-color: transparent;">
+        <div class="logo-container">
+            <div >
+                <button mat-button [routerLink]="['']" >
+                    <div style="display: flex;
+                    align-items: center;">
+                        <img class="logo" src="https://0ba699b9742e7f77542f-64ba4546b1270cc9ae1f39e6ac774693.ssl.cf1.rackcdn.com/1569233811156Icons1.png" alt="Easy Loan Logo"
+                        style="    height: 100px;
+                        width: 100px;
+                        margin-top: 39px;">
+                    <span class="logo-text">EASY LOAN</span>
+                    </div>
                 </button>
             </div>
+        </div>
 
-            <div class="example-button-row">
-                <button mat-button style="color: white;" (click)="openAbout()">About</button>
-                
-                <button mat-button [matMenuTriggerFor]="menu" style="color: white;">Services</button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item >Check CIBIL</button>
-                    <button mat-menu-item>LOAN Types</button>
-                    <button mat-menu-item>LOAN Provides</button>
-                    <button mat-menu-item>LOAN Calculator</button>
-                </mat-menu>
-                <button mat-button style="color: white;">Blog</button>
-                <button mat-button style="color: white;">Contact</button>
-            </div>
+        <div class="example-button-row">
+            <button mat-button style="color: white;" [routerLink]="['/about']">About</button>
 
-            <div class="aply">
-                <button mat-raised-button style="background-color: #3695da;color: white;"
-                    (click)="openApplyForLone()">Apply For Loan</button>
-            </div>
-        </mat-toolbar>
+            <button mat-button [matMenuTriggerFor]="menu" style="color: white;">Services</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="['/services/cibil']">Check CIBIL</button>
+                <button mat-menu-item [routerLink]="['/services/types']">LOAN Types</button>
+                <button mat-menu-item [routerLink]="['/services/providers']">LOAN Providers</button>
+                <button mat-menu-item [routerLink]="['/services/calculator']">LOAN Calculator</button>
+            </mat-menu>
+            <button mat-button style="color: white;">Blog</button>
+            <button mat-button style="color: white;">Contact</button>
+        </div>
 
-
-    </div>
-
-
-
-
+        <div class="aply">
+            <button mat-raised-button style="background-color: #3695da;color: white;" (click)="openApplyForLone()">Apply For Loan</button>
+        </div>
+    </mat-toolbar>
 </div>
-<div class="baner" style="display: flex;
+<!-- <span class="baner" style="display: flex;
 justify-content: space-evenly;
 margin: 101px 150px;
 width: 411px;">
@@ -60,10 +55,9 @@ width: 411px;">
                 <mat-divider></mat-divider>
             </mat-card-content>
             <mat-card-actions style="justify-content: center;">
-                <button mat-raised-button
-                    style="background-color: #fcfcfc; color: rgb(0, 0, 0); border-radius: 20px;"(click)="openApplyForLone()">Apply For Loan</button>
+                <button mat-raised-button style="background-color: #fcfcfc; color: rgb(0, 0, 0); border-radius: 20px;"
+                    (click)="openApplyForLone()">Apply For Loan</button>
             </mat-card-actions>
         </mat-card>
-
     </div>
-</div>
+</span> -->

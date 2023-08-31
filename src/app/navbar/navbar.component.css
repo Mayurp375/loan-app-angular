@@ -1,3 +1,28 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;    /* adjust based on your desired logo size */
+    height: 40px;   /* adjust based on your desired logo size */
+    margin-right: 10px; /* spacing between logo and the text */
+}
+
+.logo-text {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 24px;  /* adjust based on your desired text size */
+}
+
+/* Ensure mat-button does not have a default background or border */
+button[mat-button] {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
 .data {
     background-color: transparent;
     color: white;
@@ -12,6 +37,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+    margin-left: 40px
 }
 
 .icon-main {

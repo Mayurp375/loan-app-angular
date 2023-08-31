@@ -27,6 +27,11 @@ import { RegisterComponent } from './register/register.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { AboutComponent } from './about/about.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TypesOfLoanComponent } from './types-of-loan/types-of-loan.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     NavbarComponent,
     AplyforloanComponent,
     RegisterComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent,
+    TypesOfLoanComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,14 +50,15 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatInputModule,MatIconModule,MatButtonModule,MatToolbarModule,MatDividerModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
     FormsModule,
     MatCardModule,
     MatDialogModule,MatProgressBarModule,
     MatDatepickerModule,
-    MatNativeDateModule ,MatMenuModule,MatTabsModule
-    
+    MatNativeDateModule ,MatMenuModule,MatTabsModule,
+    MatExpansionModule,HttpClientModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
