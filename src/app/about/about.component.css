@@ -1,0 +1,21 @@
+main {
+    overflow: auto;
+    max-height: 500px;
+    margin: 10px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+img {
+    float: left;
+    margin-right: 20px;
+    opacity: 0.6;
+}
+
+h1 {
+    margin-top: 0;
+}

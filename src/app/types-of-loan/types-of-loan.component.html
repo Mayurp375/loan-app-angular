@@ -1,0 +1,32 @@
+<div class="list-data">
+    <div class="scroll-container">
+        <div class="card-data" style="display: flex; flex-wrap: wrap;height: 200px;justify-content: center;gap: 10px;">
+            <mat-card *ngFor="let loan of loans" class="example-card" style="justify-content: center;">
+                <div class="cart-item">
+                    <mat-card-header class="box" style="justify-content: center;">
+                        <p>{{loan.name}}</p>
+                    </mat-card-header>
+
+                    <mat-card-header class="box" style="justify-content: center;">
+                        <mat-card-title>₹ {{loan.amount}}</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-actions class="box" style="justify-content: center;">
+                        <button mat-button (click)="openApplyForLone()">Apply Now</button>
+                        <button mat-button (click)="openInfoDialog(loan)"><span class="material-icons">info</span></button> 
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+        </div>
+
+        <ng-template #loanInfoDialog>
+            <h2 mat-dialog-title>{{selectedLoan?.name}}</h2>
+            <mat-dialog-content>
+                <p>{{selectedLoan?.description }}</p>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+                <button mat-button mat-dialog-close>Close</button>
+            </mat-dialog-actions>
+        </ng-template>
+    </div>
+</div>

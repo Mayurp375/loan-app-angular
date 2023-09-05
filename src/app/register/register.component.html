@@ -1,0 +1,93 @@
+<div class="main">
+    <div class="border">
+        <div mat-dialog-title>
+            <h1>Register</h1>
+        </div>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div mat-dialog-content class="inputForm" style="    display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;">
+
+                <!-- "name": "{{$randomFullName}}",
+            //     "email": "{{$randomEmail}}",
+            //     "mobilNumber": "123-456-7890",
+            //     "city": "{{$randomCity}}",
+            //     "state": "{{$randomStreetAddress}}",
+            //     "dataOfBirth": "1990-01-01",
+            //     "password": "{{$randomPassword}}!" -->
+
+                <div class="input-tag">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput type="text" formControlName="name">
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-tag">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput type="number" formControlName="mobilNumber">
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Gadchiroli" type="text" formControlName="city">
+                    </mat-form-field>
+                </div>
+
+                <div class="input-tag">
+                    <mat-form-field appearance="outline">
+                        <mat-label>State</mat-label>
+                        <input matInput placeholder="Maharashtra" type="text" formControlName="state">
+                    </mat-form-field>
+    
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dataOfBirth">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <!-- <div *ngIf="dataOfBirth.value">
+                    Formatted Date of Birth: {{ dataOfBirth.value | date:'fullDate' }}
+                </div> -->
+
+
+
+               <div class="input-tag">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" type="password" formControlName="password">
+                    <mat-error>
+                        Password is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- formControlName="confirmPassword" -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput placeholder="Password" type="password">
+                    <mat-error>
+                        Passwords do not match.
+                    </mat-error>
+                </mat-form-field>
+               </div>
+
+
+
+                <div mat-dialog-action style=" display: flex; gap: 99px; justify-content: center; padding: 0 25px ;">
+                    <button mat-raised-button mat-dialog-close style="flex: 1px;">Cancel</button>
+                    <button mat-raised-button color="primary" style="flex: 1px;">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

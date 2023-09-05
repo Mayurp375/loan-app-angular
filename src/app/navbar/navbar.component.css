@@ -1,0 +1,85 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;    /* adjust based on your desired logo size */
+    height: 40px;   /* adjust based on your desired logo size */
+    margin-right: 10px; /* spacing between logo and the text */
+}
+
+.logo-text {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 24px;  /* adjust based on your desired text size */
+}
+
+/* Ensure mat-button does not have a default background or border */
+button[mat-button] {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.data {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    margin-left: 40px
+}
+
+.icon-main {
+    height: 40px;
+    width: 40px;
+}
+
+.example-button-row {
+    display: flex;
+    gap: 20px;
+    margin-left: 208px;
+}
+
+.example-button-row button:hover {
+    background-color: #3695da;
+  
+}
+
+.aply {
+    margin-left: auto;
+}
+
+.example-card {
+    background-color: #3695da;
+    width: 90%;
+   
+    margin: 5% auto;
+
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        width: 80%;
+    }
+
+    .example-card {
+        width: 50%;
+       
+    }
+}
+
+
+
+  

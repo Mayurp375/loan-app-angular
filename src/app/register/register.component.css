@@ -1,0 +1,10 @@
+.inputForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.input-tag{
+    display: flex;
+    gap: 10px;
+}

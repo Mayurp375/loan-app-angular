@@ -1,0 +1,32 @@
+<div class="main">
+    <div mat-dialog-title style="display: flex; justify-content: center;">
+        <h1>Login</h1>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div mat-dialog-content class="inputForm">
+            
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+                
+            </div>
+            
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label >
+                    <input matInput formControlName="password">
+                </mat-form-field>
+            </div>
+            
+           
+        </div>
+    
+        <div mat-dialog-action style=" display: flex; gap: 99px; justify-content: center; padding: 0 25px ;">
+            <button mat-raised-button mat-dialog-close style="flex: 1px;">Cancel</button>
+            <button mat-raised-button color="primary" style="flex: 1px;">Login</button>
+            <button mat-raised-button mat-dialog-close style="flex: 1px;" [routerLink]="['forget-password']">Forget Password?</button>
+        </div>
+    </form>
+</div>
