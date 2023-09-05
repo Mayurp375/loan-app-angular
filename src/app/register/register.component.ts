@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +13,7 @@ export class RegisterComponent implements OnInit {
   userForm!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    private fb: FormBuilder, private userService: UserService,private dialogRef:MatDialogRef<RegisterComponent>,@Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.userForm = this.fb.group({
       name: '',
@@ -40,61 +38,44 @@ export class RegisterComponent implements OnInit {
   // confirmPassword: new FormControl('', Validators.required)
   // });
 
-
-
-
-
   ngOnInit(): void {
     this.userForm.patchValue(this.data);
-   }
+  }
  
-  // onSubmit() {
-  
-   
-  //   if (this.userForm.valid) {
-  //     console.log(this.userForm);
-  //     this.userService.addEmployee(this.userForm.value).subscribe({
-  
-  //       next: (val: any) => {
-  //         console.log(this.userForm.value);
-  //         alert('Emlopyee added succesfully');
-  //         // this.dialogRef.close(true);
-  //       },
-  //       error: (err: any) => {
-  //         console.error(err);
-  //       }
-  //     })
-  //   }
-  // }
+ 
 
   onSubmit() {
     if (this.userForm.valid) {
-      this.userService.addEmployee(this.userForm.value).subscribe(() => {
-        const otpNumber = prompt('Please enter the OTP sent to your email:');
-        console.log(otpNumber);
-        // Check if OTP is provided
-        if (otpNumber && otpNumber.trim() !== '') {
-     
-          
-          const formDataWithOtp = { ...this.userForm.value,otpNumber};
-          
-          this.userService.validateOtp(formDataWithOtp).subscribe(response => {
-            if (response.ok) {
-              console.log(response.ok);
-              
-              alert('Registration successful!');
-            } else {
-              alert('Invalid OTP. Please try again.');
-            }
-            
-          });
-          
-        } else {
-          alert('OTP is required for verification.');
+      this.userService.addEmployee(this.userForm.value).subscribe(
+        () => {
+          // Successful registration
+          const otpNumber = prompt('Please enter the OTP sent to your email:');
+          console.log(otpNumber);
+  
+          if (otpNumber && otpNumber.trim() !== '') {         
+            const formDataWithOtp = { ...this.userForm.value, otpNumber };         
+  
+            this.userService.validateOtp(formDataWithOtp).subscribe({
+              next:(val:any)=>{
+
+                
+              },
+              error:(err:any)=>{
+                
+                alert('Emlopyee added succesfully');
+                this.dialogRef.close(true);
+              }
+            });         
+          } 
+        },
+        error => {
+          console.error("Error during registration:", error);
+          alert('Registration failed. Please try again.');
         }
-      });
+      );
     } else {
       alert('Please fill in all the required fields.');
     }
-  } 
+  }
+  
 }

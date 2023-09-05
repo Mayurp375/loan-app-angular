@@ -1,0 +1,29 @@
+
+
+<div class="cibilForm">
+  
+  <form [formGroup]="cibilForm" (ngSubmit)="checkCibilScore()">
+    <!-- <div>
+      <label for="panCardNumber">PAN Card Number:</label>
+      <input type="text" id="panCardNumber" formControlName="panNumber">
+    </div> -->
+    <h1 id="title-name">{{title}}</h1>
+    <div class="row" >
+      <mat-form-field appearance="outline" >
+        <mat-label for="panCardNumber">PAN Card Number:</mat-label>
+        <input matInput type="text" id="panCardNumber" formControlName="panNumber" >
+      </mat-form-field>
+      <div mat-dialog-action style=" display: flex; gap: 99px; justify-content: center; padding: 0 25px ;">
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </div>
+
+    <!--  <button type="submit">Check CIBIL Score</button> -->
+    
+
+  </form>
+
+  <div *ngIf="responseMessage">
+    {{ responseMessage }}
+  </div>
+</div>

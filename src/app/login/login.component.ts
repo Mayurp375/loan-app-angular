@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from '../service/user.service';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +10,39 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  userForm = new FormGroup({
-   
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),
-    otp: new FormControl('', Validators.required)
-  });
 
+  loginForm: FormGroup;
+  responseMessage!: string;
 
-  
-  onSubmit() {
-    console.log(this.userForm.value);
+  constructor(private fb: FormBuilder, private authService: UserService,private router: Router,private dialogRef : MatDialogRef<LoginComponent>
+    ) {
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: ['']
+    });
+  }
+
+  loginUser() {
+    const { email, password } = this.loginForm.value;
+    console.log(this.loginForm)
+    this.authService.login(email, password).subscribe(
+      {
+        next:()=>{
+          this.router.navigate(['/dashboard']);
+          this.dialogRef.close(true);
+        },
+        error:(err:any)=>{
+          alert('Login failed! ' + err);
+        }
+      }
+    //   response => {
+    //   this.responseMessage = response;
+    //   if (response.success) {  
+    //     alert('Login failed!');
+    //   } else {
+    //     this.router.navigate(['/dashboard']);
+    //   }
+    // }
+    );
   }
 }

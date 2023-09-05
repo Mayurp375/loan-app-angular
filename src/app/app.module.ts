@@ -32,6 +32,11 @@ import { TypesOfLoanComponent } from './types-of-loan/types-of-loan.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion'
 import { ReactiveFormsModule } from '@angular/forms';
+import { CheckCibilComponent } from './check-cibil/check-cibil.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GenerateOtpComponent } from './update/generate-otp/generate-otp.component';
+import { UpdatePasswordComponent } from './update/update-password/update-password.component';
+import { ResetPasswordComponentComponent } from './update/reset-password-component/reset-password-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +47,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     PageNotFoundComponent,
     TypesOfLoanComponent,
+    CheckCibilComponent,
+    DashboardComponent,
+    GenerateOtpComponent,
+    UpdatePasswordComponent,
+    ResetPasswordComponentComponent,
     
   ],
   imports: [

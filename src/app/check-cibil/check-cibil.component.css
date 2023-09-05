@@ -1,0 +1,38 @@
+ .cibilForm {}
+
+ .example-form {
+     min-width: 150px;
+     max-width: 500px;
+     width: 100%;
+ }
+
+ .example-full-width {
+     width: 100%;
+ }
+
+ td {
+     padding-right: 8px;
+ }
+
+ #title-name {
+     display: flex;
+     justify-content: center;
+     color: #ffffff;
+ }
+
+ :host {
+     display: flex;
+     justify-content: center;
+     margin: 100px 0px;
+ }
+
+ .mat-form-field {
+     width: 100%;
+     min-width: 300px;
+ }
+
+ mat-card-title,
+ mat-card-content {
+     display: flex;
+     justify-content: center;
+ }
