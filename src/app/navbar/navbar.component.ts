@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AplyforloanComponent } from '../aplyforloan/aplyforloan.component';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -16,4 +17,19 @@ export class NavbarComponent {
   openApplyForLone(): void {
      this.dialog.open(AplyforloanComponent);
   } 
+
+
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
+  // Example method to change login status
+  login() {
+    this.loggedIn.next(true);
+  }
+
+  logout() {
+    this.loggedIn.next(false);
+  }
 }

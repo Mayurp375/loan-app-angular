@@ -1,15 +1,16 @@
 <div class="navbar">
     <mat-toolbar style="background-color: transparent;">
         <div class="logo-container">
-            <div >
-                <button mat-button [routerLink]="['']" >
+            <div>
+                <button mat-button [routerLink]="['']">
                     <div style="display: flex;
                     align-items: center;">
-                        <img class="logo" src="https://0ba699b9742e7f77542f-64ba4546b1270cc9ae1f39e6ac774693.ssl.cf1.rackcdn.com/1569233811156Icons1.png" alt="Easy Loan Logo"
-                        style="    height: 100px;
+                        <img class="logo"
+                            src="https://0ba699b9742e7f77542f-64ba4546b1270cc9ae1f39e6ac774693.ssl.cf1.rackcdn.com/1569233811156Icons1.png"
+                            alt="Easy Loan Logo" style="    height: 100px;
                         width: 100px;
                         margin-top: 39px;">
-                    <span class="logo-text">EASY LOAN</span>
+                        <span class="logo-text">EASY LOAN</span>
                     </div>
                 </button>
             </div>
@@ -21,18 +22,31 @@
             <button mat-button [matMenuTriggerFor]="menu" style="color: white;">Services</button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item [routerLink]="['check-cibil']">Check CIBIL</button>
-                <button mat-menu-item [routerLink]="['/services/types']">LOAN Types</button> 
+                <button mat-menu-item [routerLink]="['/services/types']">LOAN Types</button>
                 <button mat-menu-item [routerLink]="['/services/calculator']">EMI Calculator</button>
             </mat-menu>
             <button mat-button style="color: white;">Blog</button>
             <button mat-button style="color: white;">Contact</button>
         </div>
 
-        <div class="aply">
-            <button mat-raised-button style="background-color: #3695da;color: white;" (click)="openApplyForLone()">Apply For Loan</button>
-        </div>
+        <!-- <div class="aply">
+            <button mat-raised-button style="background-color: #3695da;color: white;" (click)="openApplyForLone()">Apply
+                For Loan</button>
+        </div> -->
     </mat-toolbar>
-    
+
+    <!-- ... your existing navbar code ... -->
+
+    <div class="aply" *ngIf="isLoggedIn | async; else notLoggedIn">
+        <button mat-raised-button style="background-color: #3695da; color: white;width: 164px;" (click)="logout()">Logout</button>
+    </div>
+    <ng-template #notLoggedIn>
+        <div class="aply">
+            <button mat-raised-button style="background-color: #3695da;color: white;width: 164px;" (click)="openApplyForLone()">Apply
+                For Loan</button>
+        </div>
+    </ng-template>
+
 </div>
 
 <!-- <span class="baner" style="display: flex;

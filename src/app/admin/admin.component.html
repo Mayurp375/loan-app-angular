@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Mobil Number</th>
+            <th>DOB</th>
+            <th>Actions</th>
+            <!-- Add other headers as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let applicant of applicants">
+            <td>{{applicant.id}}</td>
+            <td>{{applicant.name}}</td>
+            <td>{{applicant.email}}</td>
+            <td>{{applicant.city}}</td>
+            <td>{{applicant.mobilNumber}}</td>
+            <td>{{applicant.dataOfBirth | date }} </td>
+            <td>
+                <button (click)="approve()"><mat-icon>check</mat-icon></button>
+                
+                <button (click)="reject(applicant)">Reject</button>
+            </td>
+            <!-- Add other data columns as needed -->
+        </tr>
+    </tbody>
+</table>

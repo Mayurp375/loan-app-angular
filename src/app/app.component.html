@@ -1,3 +1,7 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 <router-outlet></router-outlet>
-<app-types-of-loan></app-types-of-loan>
+<app-types-of-loan></app-types-of-loan> -->
+
+<app-navbar *ngIf="router.url !== '/admin'"></app-navbar>
+<router-outlet></router-outlet>
+<app-types-of-loan *ngIf="router.url !== '/admin'"></app-types-of-loan>

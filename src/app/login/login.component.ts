@@ -14,8 +14,8 @@ export class LoginComponent {
   loginForm: FormGroup;
   responseMessage!: string;
 
-  constructor(private fb: FormBuilder, private authService: UserService,private router: Router,private dialogRef : MatDialogRef<LoginComponent>
-    ) {
+  constructor(private fb: FormBuilder, private authService: UserService, private router: Router, private dialogRef: MatDialogRef<LoginComponent>
+  ) {
     this.loginForm = this.fb.group({
       email: [''],
       password: ['']
@@ -25,24 +25,17 @@ export class LoginComponent {
   loginUser() {
     const { email, password } = this.loginForm.value;
     console.log(this.loginForm)
-    this.authService.login(email, password).subscribe(
-      {
-        next:()=>{
+    this.authService.getAuth(email, password).subscribe({
+        next: (res) => {
+          console.log("The response from the spring boot", res)
           this.router.navigate(['/dashboard']);
           this.dialogRef.close(true);
         },
-        error:(err:any)=>{
-          alert('Login failed! ' + err);
+        error: (err: any) => {
+          console.log('Login failed! ' + err);
+          console.log(err)
         }
       }
-    //   response => {
-    //   this.responseMessage = response;
-    //   if (response.success) {  
-    //     alert('Login failed!');
-    //   } else {
-    //     this.router.navigate(['/dashboard']);
-    //   }
-    // }
     );
   }
 }

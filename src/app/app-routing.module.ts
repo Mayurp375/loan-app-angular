@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CheckCibilComponent } from './check-cibil/check-cibil.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponentComponent } from './update/reset-password-component/reset-password-component.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' }, // Redirect to AboutComponent by default
@@ -11,8 +12,17 @@ const routes: Routes = [
   {path : 'check-cibil',component:CheckCibilComponent},
   { path: 'dashboard', component: DashboardComponent },
   {path:'forget-password',component:ResetPasswordComponentComponent},
+  {path:'admin',component:AdminComponent},
   { path : '**' ,redirectTo: '/', pathMatch: 'full'}
-
+  ,
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: '', component: AdminComponent } 
+    ]
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({

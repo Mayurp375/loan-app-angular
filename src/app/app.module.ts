@@ -37,6 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GenerateOtpComponent } from './update/generate-otp/generate-otp.component';
 import { UpdatePasswordComponent } from './update/update-password/update-password.component';
 import { ResetPasswordComponentComponent } from './update/reset-password-component/reset-password-component.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { ResetPasswordComponentComponent } from './update/reset-password-compone
     GenerateOtpComponent,
     UpdatePasswordComponent,
     ResetPasswordComponentComponent,
+    AdminComponent,
     
   ],
   imports: [
